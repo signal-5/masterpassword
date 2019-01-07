@@ -52,7 +52,7 @@ while (length $k<32) { $k=$k . "\x01\x02\x03\x04\x01\x02\x03\x04\x01\x02\x03\x04
 $key=substr $k,0,32;
 
 $c = Crypt::CBC->new( -key    => $key,
-                      -cipher => 'Blowfish'
+                      -cipher => 'Twofish2'
                     );
 $m=~s/\'/\\\'/g;
                     
@@ -106,7 +106,7 @@ while (length $k<32) { $k=$k . "\x01\x02\x03\x04\x01\x02\x03\x04\x01\x02\x03\x04
 $key=substr $k,0,32;
 
 $c = Crypt::CBC->new( -key    => $key,
-                      -cipher => 'Blowfish'
+                      -cipher => 'Twofish2'
                     );
 
 eval $c->decrypt_hex($code);
